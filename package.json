@@ -1,0 +1,34 @@
+{
+  "name": "finucane-portfolio",
+  "version": "1.0.0",
+  "description": "Personal website",
+  "main": "index.js",
+  "repository": "https://github.com/TimFinucane/finucane-portfolio",
+  "author": "Timothy Finucane <timfinucane@outlook.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/react": "^16.0.38",
+    "@types/react-dom": "^16.0.4",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.17",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "csp-webpack-plugin": "^1.0.2",
+    "html-webpack-plugin": "^2.30.1",
+    "file-loader": "^1.1.6",
+    "css-loader": "^0.28.7",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.1",
+    "ts-loader": "^3.5.0",
+    "typescript": "^2.6.2",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7"
+  },
+  "scripts": {
+    "build": "webpack --env.production --config webpack.js",
+    "debug": "webpack-dev-server --open --env.development --config webpack.js"
+  }
+}

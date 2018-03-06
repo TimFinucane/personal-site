@@ -1,0 +1,22 @@
+{
+  "include": ["./src/"],
+
+  "compilerOptions": {
+    "pretty": true,
+
+    "outDir": "./dist/",
+
+    "noImplicitAny": true,
+
+    "strict": true,
+    "module": "esnext",
+    "lib": [ "es2015", "dom" ],
+    "experimentalDecorators": true,
+    "target": "es5",
+
+    "jsx": "react",
+    "allowJs": true,
+
+    "allowSyntheticDefaultImports": true
+  }
+}

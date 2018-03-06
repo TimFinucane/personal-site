@@ -1,0 +1,15 @@
+.*/
+
+# General npm/webpack ignores
+node_modules/
+dist/
+
+# Visual studio/code
+build/
+bin/
+obj/
+*.sln
+*.njsproj*
+
+# Linting
+tslint.json
