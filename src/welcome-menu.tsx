@@ -22,6 +22,14 @@ export class WelcomeMenu extends React.Component<WelcomeMenuProps, { menu_state:
         this.state = { menu_state: 0 };
     }
 
+    hovered()
+    {
+        if( this.state.menu_state == 0 )
+        {
+            this.expand();
+        }
+    }
+
     expand()
     {
         const curState = this.state.menu_state;
@@ -31,7 +39,7 @@ export class WelcomeMenu extends React.Component<WelcomeMenuProps, { menu_state:
             return;
         } else {
             // Add an item in another 0.5s
-            setTimeout( this.expand.bind(this), 200 );
+            setTimeout( this.expand.bind(this), 500 );
         }
         this.setState( { menu_state: curState + 1 } );
     }
@@ -42,14 +50,25 @@ export class WelcomeMenu extends React.Component<WelcomeMenuProps, { menu_state:
     renderMenu()
     {
         // Transition properties here
+
+        // This annoyingly girthy code shows a number of elements from the elementlist, starting with the last elements:
+        // 1 -> last, 2 -> second_to_last, last, 3 -> 3rd_to_last...
         return <ul className={styles.menu}>
-            {Array.from({length: this.state.menu_state}, (x,i)=>i).map( i => <li key={this.props.elements[i]}>{this.props.elements[i]}</li> )}
+            {
+                Array.from({length: this.state.menu_state}, (x,i)=>this.state.menu_state - i)
+                .map( i => {
+                    const text = this.props.elements[this.props.elements.length-i];
+                    return <li key={text} className={i == this.state.menu_state ? styles.create : styles.slide}>
+                        {text}
+                    </li> 
+                } )
+            }
         </ul>;
     }
 
     render()
     {
-        return <div className={styles.welcome_menu} onMouseOver={this.expand.bind(this)}>
+        return <div className={styles.welcome_menu} onMouseOver={this.hovered.bind(this)}>
             <h1 className={styles.title}>{this.props.title}</h1>
             {this.renderMenu()}
             </div>;
