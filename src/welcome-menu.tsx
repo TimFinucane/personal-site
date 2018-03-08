@@ -58,7 +58,9 @@ export class WelcomeMenu extends React.Component<WelcomeMenuProps, { menu_state:
                 Array.from({length: this.state.menu_state}, (x,i)=>this.state.menu_state - i)
                 .map( i => {
                     const text = this.props.elements[this.props.elements.length-i];
-                    return <li key={text} className={i == this.state.menu_state ? styles.create : styles.slide}>
+                    // Key is new every time to force css animations active
+                    const key = this.state.menu_state * this.props.elements.length + i;
+                    return <li key={key} className={i == this.state.menu_state ? styles.create : styles.slide}>
                         {text}
                     </li> 
                 } )

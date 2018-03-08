@@ -6,6 +6,6 @@ import { WelcomeMenu } from './welcome-menu';
 import './styles.scss';
 
 ReactDOM.render(
-    <WelcomeMenu title="Hello, World!" elements={['test1', 'test2']} />,
+    <WelcomeMenu title="Hello, World!" elements={['about', 'experience', 'projects']} />,
     document.getElementById( 'finucane-portfolio' )
 );

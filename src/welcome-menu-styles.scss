@@ -30,11 +30,11 @@
             font-size: 24px;
 
             &.create {
-                animation: create 0.5s ease;
+                animation: create 0.5s linear;
                 @keyframes create{ from { opacity: 0; transform: translateY(-100%); } to { opacity: 1; transform: translateY(0);} }
             }
             &.slide {
-                animation: slide 0.5s ease;
+                animation: slide 0.5s linear;
                 @keyframes slide{ from { transform: translateY(-100%); } to { transform: translateY(0);} }
             }
         }
