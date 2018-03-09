@@ -22,6 +22,9 @@ export class WelcomeMenu extends React.Component<WelcomeMenuProps, { menu_state:
         this.state = { menu_state: 0 };
     }
 
+    /*
+     * Called when mouse hovers over title text
+     */
     hovered()
     {
         if( this.state.menu_state == 0 )
@@ -30,7 +33,11 @@ export class WelcomeMenu extends React.Component<WelcomeMenuProps, { menu_state:
         }
     }
 
-    expand()
+    /*
+     * Expands the list by adding an item from props.elements to the top.
+     * Wait is how long to wait before adding another item
+     */
+    expand( wait = 0.5 )
     {
         const curState = this.state.menu_state;
 
@@ -39,7 +46,7 @@ export class WelcomeMenu extends React.Component<WelcomeMenuProps, { menu_state:
             return;
         } else {
             // Add an item in another 0.5s
-            setTimeout( this.expand.bind(this), 500 );
+            setTimeout( this.expand.bind(this), wait * 1000 );
         }
         this.setState( { menu_state: curState + 1 } );
     }
