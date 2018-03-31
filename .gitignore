@@ -10,6 +10,10 @@ bin/
 obj/
 *.sln
 *.njsproj*
+*.code-workspace
 
 # Linting
 tslint.json
+
+# Yarn
+yarn-error.log
