@@ -2,6 +2,8 @@ import * as React from 'react';
 
 const styles = require( './welcome-menu-styles.scss' );
 
+
+
 /*
  * A component that converts itself to a menu when hovered over.
  * Current behaviour is that it does not change back when unhovered. This
@@ -10,7 +12,8 @@ const styles = require( './welcome-menu-styles.scss' );
 interface WelcomeMenuProps
 {
     title: string,
-    elements: Array<string>
+    elements: Array<string>,
+    on_pressed: (button_name: string) => void;
 }
 
 export class WelcomeMenu extends React.Component<WelcomeMenuProps, { menu_state: number }>
@@ -54,12 +57,12 @@ export class WelcomeMenu extends React.Component<WelcomeMenuProps, { menu_state:
     /*
      * Renders a number of elements equal to 
      */
-    renderMenu()
+    render_menu()
     {
         // Transition properties here
 
         // This annoyingly girthy code shows a number of elements from the elementlist, starting with the last elements:
-        // 1 -> last, 2 -> second_to_last, last, 3 -> 3rd_to_last...
+        // 1 -> last. 2 -> second_to_last, last. 3 -> 3rd_to_last...
         return <ul className={styles.menu}>
             {
                 Array.from({length: this.state.menu_state}, (x,i)=>this.state.menu_state - i)
@@ -67,7 +70,11 @@ export class WelcomeMenu extends React.Component<WelcomeMenuProps, { menu_state:
                     const text = this.props.elements[this.props.elements.length-i];
                     // Key is new every time to force css animations active
                     const key = this.state.menu_state * this.props.elements.length + i;
-                    return <li key={key} className={i == this.state.menu_state ? styles.create : styles.slide}>
+                    return <li
+                        key={key}
+                        className={i == this.state.menu_state ? styles.create : styles.slide}
+                        onClick={() => this.props.on_pressed( text )}
+                    >
                         {text}
                     </li> 
                 } )
@@ -77,9 +84,9 @@ export class WelcomeMenu extends React.Component<WelcomeMenuProps, { menu_state:
 
     render()
     {
-        return <div className={styles.welcome_menu} onMouseOver={this.hovered.bind(this)}>
+        return <div className={styles.welcome_menu} onMouseOver={(this.hovered.bind(this))}>
             <h1 className={styles.title}>{this.props.title}</h1>
-            {this.renderMenu()}
+            {this.render_menu()}
             </div>;
     }
 }
