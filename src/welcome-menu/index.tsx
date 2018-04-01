@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import styles from './styles.scss';
+import * as styles from './styles.scss';
 
 /*
  * A component that converts itself to a menu when hovered over.

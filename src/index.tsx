@@ -1,7 +1,7 @@
 ﻿import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import WelcomeMenu from './welcome-menu/index';
+import WelcomeMenu from './welcome-menu';
 
 import './styles.scss';
 
