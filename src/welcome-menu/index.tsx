@@ -1,8 +1,6 @@
 import * as React from 'react';
 
-const styles = require( './welcome-menu-styles.scss' );
-
-
+import styles from './styles.scss';
 
 /*
  * A component that converts itself to a menu when hovered over.
@@ -16,7 +14,7 @@ interface WelcomeMenuProps
     on_pressed: (button_name: string) => void;
 }
 
-export class WelcomeMenu extends React.Component<WelcomeMenuProps, { menu_state: number }>
+export default class WelcomeMenu extends React.Component<WelcomeMenuProps, { menu_state: number }>
 {
     constructor( props: WelcomeMenuProps )
     {
