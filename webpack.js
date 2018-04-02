@@ -36,6 +36,7 @@ const base_environment =
                         options:
                         {
                             modules: true,
+                            camelCase: true,
                             namedExport: true
                         }
                     },
