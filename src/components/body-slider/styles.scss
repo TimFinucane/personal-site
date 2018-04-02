@@ -1,0 +1,15 @@
+.body-added {
+    animation: slide-up 0.5s linear, appear 1s;
+    @keyframes slide-up{ from { transform: translateY(-100%); } to { transform: translateY(0); } }
+    @keyframes appear{ from { opacity: 0; } to { opacity: 1; } }
+}
+.body-replaced {
+    display: inline-block;
+    animation: slide-to 0.5s;
+    @keyframes slide-to{ from { transform: translateX(100%); } to { transform: translateX(0); } }
+}
+.body-replacing {
+    display: inline-block;
+    animation: slide-away 0.5s;
+    @keyframes slide-away{ from { transform: translateX(0); } to { transform: translateX(-100%); } }
+}
