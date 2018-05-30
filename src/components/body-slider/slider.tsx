@@ -1,5 +1,5 @@
 import * as React from 'react';
-const styles = require('./styles.scss');
+import * as styles from './styles.scss';
 
 interface PassageSliderProps
 {
@@ -36,7 +36,7 @@ export default class PassageSlider extends React.Component<PassageSliderProps, {
         let element;
 
         if( this.props.old_inner === null )
-            element = <div className={styles.bodyAdded}>{this.props.inner}</div>
+            element = <div className={styles.bodyAdded}>{this.props.inner}</div>;
         else
         {
             element = <div>
