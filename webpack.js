@@ -50,7 +50,8 @@ const base_environment =
     plugins:
     [
         new CleanWebpackPlugin(['./dist']),
-        new HtmlWebpackPlugin({ template: './src/index.template.html', inject: 'body' })
+        new HtmlWebpackPlugin({ template: './src/index.template.html', inject: 'body' }),
+        new webpack.WatchIgnorePlugin([/css\.d\.ts$/]),
     ]
 };
 
