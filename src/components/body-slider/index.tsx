@@ -17,14 +17,14 @@ export default class PassageSlider extends React.Component<PassageSliderProps, {
     {
         if( this.state && this.state.previous )
         {
-            setTimeout( () => this.setState( { previous: null } ), 500 );
+            setTimeout( () => this.setState( { previous: null } ), 1000 );
             return <div>
                 <div className={styles.bodyReplaced}>{this.state.previous}</div>
                 <div className={styles.bodyReplacing}>{this.props.inner}</div>
             </div>;
         }
         else if( this.state && this.state.previous === null )
-            return <div>{this.props.inner}</div>;
+            return <div className={styles.bodyBase}>{this.props.inner}</div>;
         else if( this.props.inner )
             return <div className={styles.bodyAdded}>{this.props.inner}</div>;
         else
