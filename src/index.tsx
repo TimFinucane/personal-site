@@ -1,23 +1,18 @@
 ﻿import * as React from 'react';
 import * as react_dom from 'react-dom';
-import * as redux from 'redux';
 
-import SlideMenu from './components/slide-menu';
-import { selections } from './reducers/selection';
+import FrontPage from './front-page';
 
 import paragraphs from './static/paragraphs.json';
 import './styles.scss';
 
-const store = redux.createStore( redux.combineReducers( { selections } ) );
 
+// Load static content
 const paragraph_titles: [string] = paragraphs.paragraphs.map( (p: any) => p.name );
 const paragraph_texts: [string] = paragraphs.paragraphs.map( (p: any) => p.content );
 
+// Render the front-page
 react_dom.render(
-    <SlideMenu
-        title="Hello, World!"
-        elements={paragraph_titles}
-        on_pressed={ (name: string) => console.log( paragraph_texts[paragraph_titles.indexOf( name )] ) }
-    />,
+    <FrontPage title="Hello, World!" options={paragraph_titles} abouts={paragraph_texts} />,
     document.getElementById( 'finucane-portfolio' )
 );
