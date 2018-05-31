@@ -5,11 +5,15 @@
 }
 .body-replaced {
     display: inline-block;
+    position: absolute;
+
     animation: slide-to 0.5s;
-    @keyframes slide-to{ from { transform: translateX(100%); } to { transform: translateX(0); } }
+    @keyframes slide-to{ from { transform: translateX(0%); } to { transform: translateX(-100%); } }
 }
 .body-replacing {
     display: inline-block;
+    position: absolute;
+
     animation: slide-away 0.5s;
-    @keyframes slide-away{ from { transform: translateX(0); } to { transform: translateX(-100%); } }
+    @keyframes slide-away{ from { transform: translateX(100%); } to { transform: translateX(0); } }
 }
