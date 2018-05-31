@@ -6,16 +6,16 @@ import * as styles from './styles.scss';
  * Current behaviour is that it does not change back when unhovered. This
  * could be changed however to being on a timer.
  */
-interface WelcomeMenuProps
+interface SlideMenuProps
 {
     title: string;
     elements: string[];
     on_pressed: (button_name: string) => void;
 }
 
-export default class WelcomeMenu extends React.Component<WelcomeMenuProps, { menu_state: number }>
+export default class SlideMenu extends React.Component<SlideMenuProps, { menu_state: number }>
 {
-    constructor( props: WelcomeMenuProps )
+    constructor( props: SlideMenuProps )
     {
         super( props );
 
@@ -24,7 +24,7 @@ export default class WelcomeMenu extends React.Component<WelcomeMenuProps, { men
 
     public render()
     {
-        return <div className={styles.welcome_menu} onMouseOver={(this.hovered.bind(this))}>
+        return <div className={styles.slideMenu} onMouseOver={(this.hovered.bind(this))}>
             <h1 className={styles.title}>{this.props.title}</h1>
             {this.render_menu()}
             </div>;

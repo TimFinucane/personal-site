@@ -2,7 +2,7 @@
 import * as react_dom from 'react-dom';
 import * as redux from 'redux';
 
-import WelcomeMenu from './components/welcome-menu';
+import SlideMenu from './components/slide-menu';
 import { selections } from './reducers/selection';
 
 import paragraphs from './static/paragraphs.json';
@@ -14,7 +14,7 @@ const paragraph_titles: [string] = paragraphs.paragraphs.map( (p: any) => p.name
 const paragraph_texts: [string] = paragraphs.paragraphs.map( (p: any) => p.content );
 
 react_dom.render(
-    <WelcomeMenu
+    <SlideMenu
         title="Hello, World!"
         elements={paragraph_titles}
         on_pressed={ (name: string) => console.log( paragraph_texts[paragraph_titles.indexOf( name )] ) }
