@@ -10,7 +10,7 @@ interface SlideMenuProps
 {
     title: string;
     elements: string[];
-    on_pressed: (button_name: string) => void;
+    on_hover: (button_name: string) => void;
 }
 
 export default class SlideMenu extends React.Component<SlideMenuProps, { menu_state: number }>
@@ -47,7 +47,7 @@ export default class SlideMenu extends React.Component<SlideMenuProps, { menu_st
     {
         const curState = this.state.menu_state;
 
-        if( curState === this.props.elements.length )
+        if( this.is_end_state() )
             return;
         else
             setTimeout( this.expand.bind(this), wait * 1000 ); // Add an item in another 0.5s
@@ -74,12 +74,17 @@ export default class SlideMenu extends React.Component<SlideMenuProps, { menu_st
                     return <li
                         key={key}
                         className={i === this.state.menu_state ? styles.create : styles.slide}
-                        onClick={() => this.props.on_pressed( text )}
+                        onMouseOver={this.is_end_state() ? () => this.props.on_hover( text ) : undefined}
                     >
                         {text}
                     </li>;
                 } )
             }
         </ul>;
+    }
+
+    private is_end_state()
+    {
+        return this.state.menu_state === this.props.elements.length
     }
 }
