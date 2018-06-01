@@ -4,16 +4,16 @@ import SlideMenu from './components/slide-menu';
 import BodySlider from './components/body-slider';
 
 /*
- * FrontPage
+ * HomePage
  */
-interface FrontPageProps
+interface HomeProps
 {
     title: string;
     options: string[];
     abouts: string[];
 }
 
-export default class FrontPage extends React.Component<FrontPageProps, {selection?: JSX.Element}>
+export default class Home extends React.Component<HomeProps, {selection?: JSX.Element}>
 {
     public render()
     {

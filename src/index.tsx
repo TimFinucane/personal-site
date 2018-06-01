@@ -6,7 +6,6 @@ import FrontPage from './front-page';
 import paragraphs from './static/paragraphs.json';
 import './styles.scss';
 
-
 // Load static content
 const paragraph_titles: [string] = paragraphs.paragraphs.map( (p: any) => p.name );
 const paragraph_texts: [string] = paragraphs.paragraphs.map( (p: any) => p.content );
