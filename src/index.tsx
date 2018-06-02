@@ -9,7 +9,7 @@ import './styles.scss';
 
 // Load static content
 const page_names: [string] = pages.map( (page: any) => page.name );
-const page_descriptions: [string] = pages.map( (page: any) => page.content );
+const page_descriptions: [string] = pages.map( (page: any) => page.description );
 
 const App = () => (
     <BrowserRouter>
