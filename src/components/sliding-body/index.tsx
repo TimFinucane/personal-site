@@ -1,16 +1,16 @@
 import * as React from 'react';
 import * as styles from './styles.scss';
 
-interface PassageSliderProps
+interface SlidingBodyProps
 {
     inner?: JSX.Element;
 }
 
-export default class PassageSlider extends React.Component<PassageSliderProps, {previous?: JSX.Element | null}>
+export default class SlidingBody extends React.Component<SlidingBodyProps, {previous?: JSX.Element | null}>
 {
-    public componentWillReceiveProps( nextProps: PassageSliderProps )
+    public componentWillReceiveProps( nextProps: SlidingBodyProps )
     {
-        if( !this.timeoutHandle )
+        if( nextProps.inner !== this.props.inner && !this.timeoutHandle )
             this.setState( { previous: this.props.inner } );
     }
 
@@ -19,7 +19,7 @@ export default class PassageSlider extends React.Component<PassageSliderProps, {
         if( this.state && this.state.previous && this.props.inner )
         {
             if( !this.timeoutHandle )
-                this.timeoutHandle = window.setTimeout( () => this.setState( { previous: null } ), 1000 );
+                this.timeoutHandle = window.setTimeout( () => this.setState( { previous: null } ), 490 );
 
             return <div>
                 <div className={styles.bodyReplacing} key={this.timeoutHandle}>{this.props.inner}</div>
