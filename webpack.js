@@ -70,7 +70,7 @@ module.exports = env =>
     {
         let development_environment = base_environment;
         development_environment.devtool = 'inline-source-map';
-        development_environment.devServer = { contentBase: './dist', hot: true };
+        development_environment.devServer = { contentBase: './dist', hot: true, historyApiFallback: true, publicPath: '/'};
         development_environment.plugins.push(
             new webpack.HotModuleReplacementPlugin()
         );
