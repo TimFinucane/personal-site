@@ -1,0 +1,14 @@
+[
+    {
+        "name": "me",
+        "description": "Online CV of my work and experience"
+    },
+    {
+        "name": "projects",
+        "description": "Some of my projects"
+    },
+    {
+        "name": "friends",
+        "description": "TODO"
+    }
+]

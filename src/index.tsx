@@ -1,17 +1,17 @@
 ﻿import * as React from 'react';
 import * as react_dom from 'react-dom';
 
-import FrontPage from './front-page';
+import Home from './home';
 
-import paragraphs from './static/paragraphs.json';
+import pages from './static/pages.json';
 import './styles.scss';
 
 // Load static content
-const paragraph_titles: [string] = paragraphs.paragraphs.map( (p: any) => p.name );
-const paragraph_texts: [string] = paragraphs.paragraphs.map( (p: any) => p.content );
+const page_names: [string] = pages.map( (page: any) => page.name );
+const page_descriptions: [string] = pages.map( (page: any) => page.content );
 
-// Render the front-page
+// Render the home page as default page
 react_dom.render(
-    <FrontPage title="Hello, World!" options={paragraph_titles} abouts={paragraph_texts} />,
+    <Home title="Hello, World!" options={page_names} abouts={page_descriptions} />,
     document.getElementById( 'finucane-portfolio' )
 );
