@@ -27,9 +27,11 @@ export default class SlidingMenu extends React.Component<SlidingMenuProps, { men
 
     public render()
     {
-        return <div className={styles.slideMenu} onMouseOver={(this.hovered.bind(this))}>
-            <h1 className={styles.title}>{this.props.title}</h1>
-            {this.render_menu()}
+        const dir_style = this.props.vertical ? styles.vertical : styles.horizontal;
+
+        return <div className={[styles.slideMenu, dir_style].join(' ')} onMouseOver={(this.hovered.bind(this))}>
+            <h1 className={[styles.title, dir_style].join(' ')}>{this.props.title}</h1>
+            {this.render_menu( dir_style )}
         </div>;
     }
 
@@ -61,13 +63,12 @@ export default class SlidingMenu extends React.Component<SlidingMenuProps, { men
     /*
      * Renders a number of elements equal to
      */
-    private render_menu()
+    private render_menu( dir_style: string )
     {
         // Transition properties here
 
         // This annoyingly girthy code shows a number of elements from the elementlist, starting with the last elements:
         // 1 -> last. 2 -> second_to_last, last. 3 -> 3rd_to_last...
-        const dir_style = this.props.vertical ? styles.vertical : styles.horizontal;
         return <ul className={[styles.menu, dir_style].join(' ')}>
             {
                 Array.from( {length: this.state.menu_state}, (x, i) => this.state.menu_state - i )

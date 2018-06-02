@@ -1,35 +1,33 @@
 .slide-menu { // TODO: Adjust styles for mobile
     &.vertical {
         width: 300px;
+
         margin-left: auto;
         margin-right: auto;
+
+        text-align: center;
     }
     &.horizontal {
         height: 100px;
-        margin-top: auto;
-        margin-bottom: auto;
     }
-
-    margin-top: 300px;
-
-    text-align: center;
 
     .title {
         &.horizontal {
             display: inline-block;
+            padding: 0px 20px;
         }
-        &.vertical {}
-
-        margin: 5px;
 
         font-family: sans-serif;
         font-size: 36px;
         font-weight: bold;
     }
     ul.menu {
-        margin: 0px;
-        padding: 0px;
+        &.horizontal {
+            display: inline-block;
+            vertical-align: middle;
+        }
 
+        padding: 0;
         list-style-type: none;
 
         li {
@@ -44,11 +42,11 @@
             }
 
             overflow: hidden;
-            transition: transform 0.5s;
 
             margin: 0px;
             padding: 0px;
 
+            text-align: center;
             font-family: sans-serif;
             font-size: 24px;
 
