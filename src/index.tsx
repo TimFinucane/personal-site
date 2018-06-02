@@ -2,7 +2,7 @@
 import { render } from 'react-dom';
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 
-import Home from './home';
+import PageHeader from './components/page-header';
 
 import pages from './static/pages.json';
 import './styles.scss';
@@ -13,10 +13,13 @@ const page_descriptions: [string] = pages.map( (page: any) => page.content );
 
 const App = () => (
     <BrowserRouter>
-        <Switch>
-            <Route exact path="/" component={() => <Home title="Hello, World!" options={page_names} abouts={page_descriptions} />}/>
-            <Route path="/test" component={() => <p>hi</p>}/>
-        </Switch>
+        <div>
+            <PageHeader title="Hello, World!" options={page_names} abouts={page_descriptions} />
+            <Switch>
+                <Route exact path="/" component={() => <p>hi</p>}/>
+                <Route path="/test" component={() => <p>not hi</p>}/>
+            </Switch>
+        </div>
     </BrowserRouter>
 );
 
