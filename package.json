@@ -9,11 +9,8 @@
   "dependencies": {
     "@types/react": "^16.0.38",
     "@types/react-dom": "^16.0.4",
-    "@types/react-redux": "^5.0.15",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-redux": "^5.0.7",
-    "redux": "^3.7.2"
+    "react-dom": "^16.2.0"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^0.1.17",
