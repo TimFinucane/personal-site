@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import SlideMenu from './components/slide-menu';
+import SlidingMenu from './components/sliding-menu';
 import BodySlider from './components/body-slider';
 
 /*
@@ -18,7 +18,13 @@ export default class Home extends React.Component<HomeProps, {selection?: JSX.El
     public render()
     {
         return <div id="front-page">
-            <SlideMenu title={this.props.title} elements={this.props.options} on_hover={this.select.bind(this)}/>
+            <SlidingMenu
+                title={this.props.title}
+                elements={this.props.options}
+                on_hover={this.select.bind(this)}
+                on_click={(i) => {console.log(i); }}
+                vertical={true}
+            />
             <BodySlider inner={this.state ? this.state.selection : undefined}/>
         </div>;
     }

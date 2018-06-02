@@ -6,16 +6,19 @@ import * as styles from './styles.scss';
  * Current behaviour is that it does not change back when unhovered. This
  * could be changed however to being on a timer.
  */
-interface SlideMenuProps
+export interface SlidingMenuProps
 {
     title: string;
     elements: string[];
-    on_hover: (button_name: string) => void;
+    on_hover: (element: string) => void;
+    on_click: (element: string) => void;
+
+    vertical: boolean;
 }
 
-export default class SlideMenu extends React.Component<SlideMenuProps, { menu_state: number }>
+export default class SlidingMenu extends React.Component<SlidingMenuProps, { menu_state: number }>
 {
-    constructor( props: SlideMenuProps )
+    constructor( props: SlidingMenuProps )
     {
         super( props );
 
@@ -27,7 +30,7 @@ export default class SlideMenu extends React.Component<SlideMenuProps, { menu_st
         return <div className={styles.slideMenu} onMouseOver={(this.hovered.bind(this))}>
             <h1 className={styles.title}>{this.props.title}</h1>
             {this.render_menu()}
-            </div>;
+        </div>;
     }
 
     /*
@@ -64,7 +67,8 @@ export default class SlideMenu extends React.Component<SlideMenuProps, { menu_st
 
         // This annoyingly girthy code shows a number of elements from the elementlist, starting with the last elements:
         // 1 -> last. 2 -> second_to_last, last. 3 -> 3rd_to_last...
-        return <ul className={styles.menu}>
+        const dir_style = this.props.vertical ? styles.vertical : styles.horizontal;
+        return <ul className={[styles.menu, dir_style].join(' ')}>
             {
                 Array.from( {length: this.state.menu_state}, (x, i) => this.state.menu_state - i )
                 .map( (i) => {
@@ -73,8 +77,9 @@ export default class SlideMenu extends React.Component<SlideMenuProps, { menu_st
                     const key = this.state.menu_state * this.props.elements.length + i;
                     return <li
                         key={key}
-                        className={i === this.state.menu_state ? styles.create : styles.slide}
+                        className={[(i === this.state.menu_state ? styles.create : styles.slide), dir_style].join(' ')}
                         onMouseOver={this.is_end_state() ? () => this.props.on_hover( text ) : undefined}
+                        onClick={this.is_end_state() ? () => this.props.on_click( text ) : undefined}
                     >
                         {text}
                     </li>;
@@ -85,6 +90,6 @@ export default class SlideMenu extends React.Component<SlideMenuProps, { menu_st
 
     private is_end_state()
     {
-        return this.state.menu_state === this.props.elements.length
+        return this.state.menu_state === this.props.elements.length;
     }
 }

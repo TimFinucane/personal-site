@@ -1,0 +1,75 @@
+.slide-menu { // TODO: Adjust styles for mobile
+    &.vertical {
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    &.horizontal {
+        height: 100px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    margin-top: 300px;
+
+    text-align: center;
+
+    .title {
+        &.horizontal {
+            display: inline-block;
+        }
+        &.vertical {}
+
+        margin: 5px;
+
+        font-family: sans-serif;
+        font-size: 36px;
+        font-weight: bold;
+    }
+    ul.menu {
+        margin: 0px;
+        padding: 0px;
+
+        list-style-type: none;
+
+        li {
+            // Using constant widths/heights where appropriate to make animations easier,
+            // especially for horizontal listing
+            &.horizontal {
+                display: inline-block;
+                width: 100px;
+            }
+            &.vertical {
+                height: 40px;
+            }
+
+            overflow: hidden;
+            transition: transform 0.5s;
+
+            margin: 0px;
+            padding: 0px;
+
+            font-family: sans-serif;
+            font-size: 24px;
+
+            &.create.vertical {
+                animation: create-vertical 0.5s linear;
+                @keyframes create-vertical{ from { opacity: 0; transform: translateY(-50px); } to { opacity: 1; transform: translateY(0);} }
+            }
+            &.create.horizontal {
+                animation: create-horizontal 0.5s linear;
+                @keyframes create-horizontal{ from { opacity: 0; transform: translateX(-60px); } to { opacity: 1; transform: translateX(0);} }
+            }
+            &.slide.vertical {
+                animation: slide-v 0.5s linear;
+                // Transition by full height
+                @keyframes slide-v{ from { transform: translateY(-40px); } to { transform: translateY(0);} }
+            }
+            &.slide.horizontal {
+                animation: slide-h 0.5s linear;
+                // Transition by half width as the x position also automatically changes
+                @keyframes slide-h{ from { transform: translateX(-50px); } to { transform: translateX(0);} }
+            }
+        }
+    }
+}
