@@ -1,29 +1,46 @@
-.body-base
+.alone
 {
-    display: inline-block;
+    text-align: center;
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    height: 1em;
+}
+
+.transition-container {
+    width: 250px;
+    height: 1em;
+}
+.base
+{
     position: absolute;
 
-    text-align: center;
     left: 50%;
     transform: translateX(-50%);
+
+    text-align: center;
+
+    width: 250px;
+    height: 1em;
 }
 
-.body-added {
-    @extend .body-base;
+.added {
+    @extend .alone;
 
     animation: slide-up 0.5s linear, appear 1s;
-    @keyframes slide-up{ from { transform: translateY(-100%) translateX(-50%); } to { transform: translateY(0) translateX(-50%); } }
+    @keyframes slide-up{ from { transform: translateY(-100%); } to { transform: translateY(0); } }
     @keyframes appear{ from { opacity: 0; } to { opacity: 1; } }
 }
-.body-replaced {
-    @extend .body-base;
+.replaced {
+    @extend .base;
     
     animation: slide-to 0.5s linear, disappear 0.5s ease;
     @keyframes slide-to{ from { transform: translateX(-50%); } to { transform: translateX(-75%); } }
     @keyframes disappear{ from { opacity: 1; } to { opacity: 0; } }
 }
-.body-replacing {
-    @extend .body-base;
+.replacing {
+    @extend .base;
 
     animation: slide-away 0.5s ease, appear 0.5s linear;
     @keyframes slide-away{ from { transform: translateX(0); } to { transform: translateX(-50%); } }

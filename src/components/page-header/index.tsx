@@ -13,7 +13,7 @@ interface PageHeaderProps extends RouteComponentProps<any>
     abouts: string[];
 }
 
-class PageHeader extends React.Component<PageHeaderProps, {selection?: JSX.Element}>
+class PageHeader extends React.Component<PageHeaderProps, {selection?: string}>
 {
     public render()
     {
@@ -36,7 +36,7 @@ class PageHeader extends React.Component<PageHeaderProps, {selection?: JSX.Eleme
         const index = this.props.options.indexOf( option );
 
         if( this.previous_selection !== index )
-            this.setState( { selection: <p>{this.props.abouts[index]}</p> } );
+            this.setState( { selection: this.props.abouts[index] } );
 
         this.previous_selection = index;
     }
