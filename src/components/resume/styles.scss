@@ -1,11 +1,52 @@
-table .table{
+table.table{
 
-    border: 1px;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0px;
 
-    .section-name {
-        border: 2px;
+    // A tree line going through list of items in table
+    td.section-name {
+        width: 60px;
+        height: 100%;
+
+        left: 0px;
+
+        //margin: 0px;
+        //line-height: 20px;
+
+        //text-align: right;
+        vertical-align: middle;
+        padding: 0px 7px;
+
+        border-left: 1px solid white;
     }
-    .section-body {
-        border: 2px;
+
+    // Tree line jutting to item
+    td.section-name:before {
+        position:relative;
+        display:inline-block;
+
+        top: -0.3em;
+        height: 1em;
+        width: 12px;
+
+        left: -7px;
+
+        border-bottom:1px solid white;
+        content:"";
+    }
+    // Tree line fade-in
+    tr:first-child td.section-name {
+        border-left: 1px solid transparent;
+        border-image: linear-gradient(to top, white 50%, transparent) 1;
+    }
+    // Tree line fade-out
+    tr:last-child td.section-name {
+        border-left: 1px solid transparent;
+        border-image: linear-gradient(to bottom, white 50%, transparent) 1;
+    }
+
+    td.section-body {
+        border: 0;
     }
 }

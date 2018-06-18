@@ -13,16 +13,16 @@ export default class Resume extends React.Component<{sections: Map<string, JSX.E
     {
         // Create a table row for each section, with the left side being the 'menu' part and
         // the right side holding the content
-        return <table id={styles.table}>
+        return <table className={styles.table}><tbody>
             {
                 Array.from( this.props.sections, ([key, value]) =>
-                    <tr>
-                        <td id={styles.sectionName} onClick={this.toggle_section.bind(this)}>{key}</td>
-                        <td id={styles.sectionBody}>{value}</td>
+                    <tr key={key}>
+                        <td className={styles.sectionName} onClick={this.toggle_section.bind(this)}>{key}</td>
+                        <td className={styles.sectionBody}>{value}</td>
                     </tr>
                 )
             }
-        </table>;
+        </tbody></table>;
     }
 
     private toggle_section( section: string )

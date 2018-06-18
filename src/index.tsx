@@ -20,7 +20,7 @@ const App = () => (
             <div id={styles.bodyContent}>
                 <Switch>
                     <Route exact path="/" component={() => <p>hi</p>}/>
-                    <Route path="/resume"><Resume sections={new Map([['me', <p>hello</p>]])} /></Route>
+                    <Route path="/resume"><Resume sections={new Map([['me', <p>hello</p>], ['you', <p>Not hello</p>]])} /></Route>
                     <Route path="/projects" component={() => <p>projects</p>}/>
                     <Route path="/referrals" component={() => <p>referrals</p>}/>
                     <Route><p>404 - FILE NOT FOUND</p></Route>
