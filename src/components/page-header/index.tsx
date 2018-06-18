@@ -9,8 +9,7 @@ import * as styles from './styles.scss';
 interface PageHeaderProps extends RouteComponentProps<any>
 {
     title: string;
-    options: string[];
-    abouts: string[];
+    options: Map<string, {about: string, url: string}>;
 }
 
 class PageHeader extends React.Component<PageHeaderProps, {selection?: string}>
@@ -22,9 +21,9 @@ class PageHeader extends React.Component<PageHeaderProps, {selection?: string}>
         return <div id={[styles.pageHeader, is_main ? styles.centered : styles.top].join(' ')}>
             <SlidingMenu
                 title={this.props.title}
-                elements={this.props.options}
+                elements={Array.from(this.props.options.keys())}
                 on_hover={this.select.bind(this)}
-                on_click={(i: any) => {console.log(i); }}
+                on_click={(option) => this.props.history.push( this.props.options.get( option )!.url )}
                 vertical={is_main}
             />
             <SlidingBody inner={this.state ? this.state.selection : undefined}/>
@@ -33,15 +32,13 @@ class PageHeader extends React.Component<PageHeaderProps, {selection?: string}>
 
     private select( option: string )
     {
-        const index = this.props.options.indexOf( option );
+        if( this.previous_selection !== option ) // Will not be undefined, option must be key
+            this.setState( { selection: this.props.options.get( option )!.about } );
 
-        if( this.previous_selection !== index )
-            this.setState( { selection: this.props.abouts[index] } );
-
-        this.previous_selection = index;
+        this.previous_selection = option;
     }
 
-    private previous_selection: number = -1;
+    private previous_selection: string = '';
 }
 
 export default withRouter<PageHeaderProps>(PageHeader);
