@@ -6,7 +6,7 @@ import PageHeader from './components/page-header';
 import Resume from './components/resume';
 
 import pages from './static/pages.json';
-import './styles.scss';
+import * as styles from './styles.scss';
 
 // Load static content
 const header_menu = new Map<string, {about: string, url: string}>(
@@ -17,13 +17,15 @@ const App = () => (
     <BrowserRouter>
         <div>
             <PageHeader title="Hello, World!" options={header_menu} />
-            <Switch>
-                <Route exact path="/" component={() => <p>hi</p>}/>
-                <Route path="/resume"><Resume sections={new Map([['me', <p>hello</p>]])} /></Route>
-                <Route path="/projects" component={() => <p>projects</p>}/>
-                <Route path="/referrals" component={() => <p>referrals</p>}/>
-                <Route><p>404 - FILE NOT FOUND</p></Route>
-            </Switch>
+            <div id={styles.bodyContent}>
+                <Switch>
+                    <Route exact path="/" component={() => <p>hi</p>}/>
+                    <Route path="/resume"><Resume sections={new Map([['me', <p>hello</p>]])} /></Route>
+                    <Route path="/projects" component={() => <p>projects</p>}/>
+                    <Route path="/referrals" component={() => <p>referrals</p>}/>
+                    <Route><p>404 - FILE NOT FOUND</p></Route>
+                </Switch>
+            </div>
         </div>
     </BrowserRouter>
 );
