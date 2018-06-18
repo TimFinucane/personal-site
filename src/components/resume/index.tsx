@@ -38,11 +38,9 @@ export default class Resume extends React.Component<{sections: Map<string, JSX.E
 
     private toggle_section( section: string )
     {
-        console.log(section)
         if( this.state.selected.includes( section ) )
             this.setState( { selected: this.state.selected.filter( (value) => value !== section ) } );
         else
             this.setState( { selected: this.state.selected.concat( [section] ) } );
-        console.log( this.state )
     }
 }
