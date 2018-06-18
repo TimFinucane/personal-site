@@ -1,14 +1,17 @@
 [
     {
         "name": "me",
-        "description": "Online CV of my work and experience"
+        "description": "Online CV of my work and experience",
+        "link": "resume"
     },
     {
         "name": "projects",
-        "description": "Showcase of some of my projects"
+        "description": "Showcase of some of my projects",
+        "link": "projects"
     },
     {
         "name": "friends",
-        "description": "Other SE sites (I have friends)"
+        "description": "Other SE sites (I have friends)",
+        "link": "referrals"
     }
 ]
