@@ -1,0 +1,14 @@
+[
+    {
+        "name": "me",
+        "body": "This is test information about me, which at some point should be replaced with real information This is test information about me,This is test information about me, which at some point should be replaced with real informationThis is test information about me, which at some point should be replaced with real informationThis is test information about me, which at some point should be replaced with real information which at some point should be replaced with real information This is test information about me, which at some point should be replaced with real information"
+    },
+    {
+        "name": "experience",
+        "body": "There will also be information about my experience, e.g. jobs"
+    },
+    {
+        "name": "projects",
+        "body": "Information about projects which can also be accessed through another page."
+    }
+]
