@@ -56,7 +56,7 @@
             }
             &.create.horizontal {
                 animation: create-horizontal 0.5s linear;
-                @keyframes create-horizontal{ from { opacity: 0; transform: translateX(-60px); } to { opacity: 1; transform: translateX(0);} }
+                @keyframes create-horizontal{ from { opacity: 0; transform: translateX(-140px); } to { opacity: 1; transform: translateX(0);} }
             }
             &.slide.vertical {
                 animation: slide-v 0.5s linear;
@@ -66,7 +66,7 @@
             &.slide.horizontal {
                 animation: slide-h 0.5s linear;
                 // Transition by half width as the x position also automatically changes
-                @keyframes slide-h{ from { transform: translateX(-50px); } to { transform: translateX(0);} }
+                @keyframes slide-h{ from { transform: translateX(-100px); } to { transform: translateX(0);} }
             }
         }
     }
