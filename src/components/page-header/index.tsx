@@ -18,7 +18,7 @@ class PageHeader extends React.Component<PageHeaderProps, {selection?: string}>
     {
         const is_main = this.props.location.pathname === "/";
 
-        return <div id={[styles.pageHeader, is_main ? styles.centered : styles.top].join(' ')}>
+        return <div className={[styles.pageHeader, is_main ? styles.centered : styles.top].join(' ')}>
             <SlidingMenu
                 title={this.props.title}
                 elements={Array.from(this.props.options.keys())}
