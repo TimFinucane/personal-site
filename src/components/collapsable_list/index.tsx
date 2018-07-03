@@ -1,13 +1,12 @@
 /*
- * A nice looking resume for showing multiple sections with
- * functionality for showing and hiding each individual section.
+ * A sequence of items, each of which are collapsable
  */
 
 import * as React from 'react';
 
 import * as styles from './styles.scss';
 
-export default class Resume extends React.Component<{sections: Map<string, JSX.Element>}, {selected: string[]}>
+export default class CollapsableList extends React.Component<{sections: Map<string, JSX.Element>}, {selected: string[]}>
 {
     public constructor( props: any )
     {
