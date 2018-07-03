@@ -2,15 +2,15 @@
     "name": "Tim Finucane",
     "sections": [
         {
-            "title": "me",
-            "body": "This is test information about me, which at some point should be replaced with real information This is test information about me,This is test information about me, which at some point should be replaced with real informationThis is test information about me, which at some point should be replaced with real informationThis is test information about me, which at some point should be replaced with real information which at some point should be replaced with real information This is test information about me, which at some point should be replaced with real information"
+            "title": "Me",
+            "body": "I am intrigued in all things technology, and have been ever since I was 12. I am always excited to learn new and upcoming fields of development, including machine learning, single page web apps/JavaScript everywhere, and anything else I can get my hands on. Apart from software I also enjoy music (I play the guitar and the piano, sing, and have a drum kit to bash occasionally), painting, and am learning die deutsche Sprache.\n\nI am looking for a job that encourages me to try new things and collaborate with other enthusiastic people. I can bring bright eyes and a bushy tail to the workplace (as long as that workplace has coffee)."
         },
         {
-            "title": "experience",
-            "body": "There will also be information about my experience, e.g. jobs"
+            "title": "Experience",
+            "body": "<b>Software Summer Research, Auckland MRI Research Group, November 2017 – February 2018:</b>\nUnder supervision by a Professor and Research Fellow I worked on refactoring and expanding a neural network used to detect and identify parts of the heart. I gained technical experience in Machine Learning and Python, and non-technical experience working in a professional environment, teamwork, and multi-tasking.\n\n<b>Professional Casual Staff, Auckland MRI Research Group, March 2018 – Present:</b>\nWorking in the Auckland MRI Research Group on improving the above work project, as well as forming 3d models of the heart from neural networks.\n\n<i>References available on request.</i>"
         },
         {
-            "title": "projects",
+            "title": "Projects",
             "body": "Information about projects which can also be accessed through another page."
         }
     ]
