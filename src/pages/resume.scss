@@ -1,0 +1,27 @@
+.resume {
+    // Define a width range
+    width: 40%;
+    max-width: 20in;
+    min-width: 12in;
+
+    // Centre
+    margin-left: auto;
+    margin-right: auto;
+
+    h1 {
+        text-align: center;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 16pt;
+    }
+
+    h2 {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-weight: bold;
+        font-size: 12pt;
+    }
+
+    p {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 10pt;
+    }
+}

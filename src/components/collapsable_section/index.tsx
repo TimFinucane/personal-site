@@ -4,8 +4,15 @@
 import * as React from 'react';
 import * as styles from './styles.scss';
 
-export default class CollapsableSection extends React.Component<{ header: string; body: string; }, { collapsed: boolean; }>
+export default class CollapsableSection extends React.Component<
+    { header: string; body: string; heading_level?: number }, // props
+    { collapsed: boolean; } // state
+    >
 {
+    public static defaultProps = {
+        heading_level: 1
+    };
+
     public constructor( props: any )
     {
         super( props );
@@ -15,8 +22,10 @@ export default class CollapsableSection extends React.Component<{ header: string
 
     public render()
     {
+        const Heading = "h" + this.props.heading_level!.toString();
+
         return <div className={styles.collapsableSection}>
-            <h1 onClick={this.on_click.bind(this)}>{this.props.header}</h1>
+            <Heading className={styles.heading} onClick={this.on_click.bind(this)}>{this.props.header}</Heading>
             {this.state.collapsed ? null : <p>{this.props.body}</p>}
         </div>;
     }
