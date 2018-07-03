@@ -1,0 +1,11 @@
+.collapsable-section {
+    h1 {
+        width: 100%;
+
+        text-align: center;
+        border-bottom: 1px solid grey; // An underline extending the entire length
+    }
+    p {
+        white-space: pre-line;
+    }
+}
