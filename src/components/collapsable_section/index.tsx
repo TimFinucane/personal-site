@@ -26,7 +26,7 @@ export default class CollapsableSection extends React.Component<
 
         return <div className={styles.collapsableSection}>
             <Heading className={styles.heading} onClick={this.on_click.bind(this)}>{this.props.header}</Heading>
-            {this.state.collapsed ? null : <p>{this.props.body}</p>}
+            {this.state.collapsed ? null : <p dangerouslySetInnerHTML={{__html: this.props.body}} />}
         </div>;
     }
 
