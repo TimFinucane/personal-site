@@ -9,15 +9,17 @@
 }
 
 .transition-container {
+    position: relative;
+
+    margin-left: auto;
+    margin-right: auto;
+
     width: 250px;
     height: 1em;
 }
 .base
 {
     position: absolute;
-
-    left: 50%;
-    transform: translateX(-50%);
 
     text-align: center;
 
@@ -36,13 +38,13 @@
     @extend .base;
     
     animation: slide-to 0.5s linear, disappear 0.5s ease;
-    @keyframes slide-to{ from { transform: translateX(-50%); } to { transform: translateX(-75%); } }
+    @keyframes slide-to{ from { transform: translateX(0); } to { transform: translateX(-50%); } }
     @keyframes disappear{ from { opacity: 1; } to { opacity: 0; } }
 }
 .replacing {
     @extend .base;
 
     animation: slide-away 0.5s ease, appear 0.5s linear;
-    @keyframes slide-away{ from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @keyframes slide-away{ from { transform: translateX(50%); } to { transform: translateX(0); } }
     @keyframes appear{ from { opacity: 0; } to { opacity: 1; } }
 }
