@@ -2,9 +2,11 @@
     padding-bottom: 10px;
     
     &.centered {
-        margin: auto;
+        margin-left: auto;
+        margin-right: auto;
     }
     &.top {
+        display: inline-block;
         margin-right: auto;
         margin-left: 0px;
     }
