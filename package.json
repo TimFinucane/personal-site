@@ -12,9 +12,12 @@
     "@types/react-router-dom": "^4.2.7",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-router-dom": "^4.2.2"
+    "react-router-dom": "^4.2.2",
+    "typescript": "^2.6.2"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "clean-webpack-plugin": "^0.1.17",
     "csp-webpack-plugin": "^1.0.2",
     "css-loader": "^0.28.7",
@@ -26,13 +29,12 @@
     "style-loader": "^0.19.1",
     "ts-loader": "^3.5.0",
     "tslint": "^5.9.1",
-    "typescript": "^2.6.2",
     "typings-for-css-modules-loader": "^1.7.0",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.9.7"
   },
   "scripts": {
-    "build": "webpack --env.production --config webpack.js",
-    "debug": "webpack-dev-server --open --env.development --config webpack.js"
+    "build": "webpack -p --env.production",
+    "debug": "webpack-dev-server --open --env.development"
   }
 }

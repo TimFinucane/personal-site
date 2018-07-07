@@ -1,10 +1,8 @@
-const path = require( "path" );
-const webpack = require( 'webpack' );
+import * as path from 'path';
+import * as  webpack from 'webpack';
 
-const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
-const CleanWebpackPlugin = require( 'clean-webpack-plugin' );
-const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
-const UglifyJSPlugin = require( 'uglifyjs-webpack-plugin' );
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CleanWebpackPlugin from 'clean-webpack-plugin';
 
 const base_environment =
 {
@@ -57,18 +55,14 @@ const base_environment =
 
 module.exports = env =>
 {
+    console.log('TRY')
     if( env.production )
     {
-        let production_environment = base_environment;
-        production_environment.plugins.push(
-            new UglifyJSPlugin()
-        );
-
-        return production_environment;
+        return base_environment;
     }
     else if( env.development )
     {
-        let development_environment = base_environment;
+        var development_environment = base_environment;
         development_environment.devtool = 'inline-source-map';
         development_environment.devServer = { contentBase: './dist', hot: true, historyApiFallback: true, publicPath: '/'};
         development_environment.plugins.push(
