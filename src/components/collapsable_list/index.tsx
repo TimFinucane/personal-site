@@ -24,10 +24,10 @@ export default class CollapsableList extends React.Component<{sections: Map<stri
                 Array.from( this.props.sections, ([key, value]) =>
                     <tr key={key}>
                         <td className={styles.sectionName} onClick={this.toggle_section.bind(this, key)}>{key}</td>
-                        <td className={styles.sectionBody}>
-                            <div className={this.state.selected.includes( key ) ? styles.expanded : styles.retracted}>
-                                {value}
-                            </div>
+                        <td className={
+                            [styles.sectionBody, this.state.selected.includes( key ) ? styles.expanded : styles.retracted].join(" ")}
+                        >
+                            {value}
                         </td>
                     </tr>
                 )
