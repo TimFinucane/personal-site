@@ -1,0 +1,32 @@
+[
+    {
+        "name": "cp-react",
+        "languages": ["C++"],
+        "description": "A reactive library, automatically updating variables when their dependant variables change. Heavily uses templates, see tests for examples.",
+        "link": "https://github.com/TimFinucane/cp-react"
+    },
+    {
+        "name": "metatron",
+        "languages": ["C++"],
+        "description": "A library for generating strings from input languages/grammars",
+        "link": "https://github.com/TimFinucane/metatron"
+    },
+    {
+        "name": "personal-site",
+        "languages": ["Typescript", "react"],
+        "description": "This very website! First project in typescript and react, with very plain dependencies (no bootstrap, all components are hand coded)",
+        "link": "https://github.com/TimFinucane/finucane-portfolio"
+    },
+    {
+        "name": "article-rnn",
+        "languages": ["Python", "Tensorflow"],
+        "description": "A machine learning algorithm for learning and generating articles (or other large amounts) of text. Uses a heirarchical layering of RNNs to move from character level through to",
+        "link": "https://github.com/TimFinucane/article-rnn"
+    },
+    {
+        "name": "rp-companion",
+        "languages": ["Typescript/react", "C++/cpprestsdk"],
+        "description": "An online tool for helping with running a pen and paper RPG. Uses typscript/react frontend and a C++ backend.",
+        "link": "https://github.com/TimFinucane/rp-companion"
+    }
+]
