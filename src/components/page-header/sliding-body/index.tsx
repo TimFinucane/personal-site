@@ -34,7 +34,7 @@ export default class SlidingBody extends React.Component<SlidingBodyProps, {prev
         else if( this.props.inner )
             return <div className={styles.added}>{this.props.inner}</div>;
         else
-            return <p />;
+            return <div className={styles.alone} />;
     }
 
     private timeoutHandle?: number;
