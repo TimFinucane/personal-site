@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import PageHeader from './components/page-header';
 import Resume from './pages/resume';
+import Projects from './pages/projects';
 
 import pages from './static/pages.json';
 import * as styles from './styles.scss';
@@ -22,9 +23,10 @@ const App = () => (
             </div>
             <div id={styles.bodyContent}>
                 <Switch>
-                    <Route exact path="/"       component={() => <h1>Welcome to my incomplete site :)</h1> }/>
+                    <Route exact path="/"       component={() =>
+                        <h1 style={{textAlign: 'center' }}>Welcome to my incomplete site :)</h1> }/>
                     <Route path="/resume"       component={Resume} />
-                    <Route path="/projects"     component={() => <p>projects</p>}/>
+                    <Route path="/projects"     component={Projects}/>
                     <Route path="/referrals"    component={() => <p>referrals</p>}/>
                     <Route><p>404 - FILE NOT FOUND</p></Route>
                 </Switch>
