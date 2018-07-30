@@ -1,38 +1,50 @@
-.resume {
-    // Define a width range
-    width: 40%;
-    max-width: 17in;
-    min-width: 10in;
+.resume-container {
+    width: 70%;
+    height: 100%;
 
-    // Centre
-    margin-left: auto;
-    margin-right: auto;
+    padding-left: 15%;
+    padding-right: 15%;
 
-    h1 {
-        text-align: center;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        font-size: 16pt;
+    background-color: #B59BA3;
 
-        color: #DDDDDD;
-    }
+    .resume {
+        // Define a width range
+        width: 40%;
+        max-width: 17in;
+        min-width: 10in;
 
-    h2 {
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        font-weight: bold;
-        font-size: 13pt;
+        border: 10px solid rgba(0, 0, 0, 0);
+        
+        // Centre
+        margin-left: auto;
+        margin-right: auto;
 
-        color: #DDDDDD;
-    }
+        h1 {
+            text-align: center;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 16pt;
 
-    p {
-        font-family: 'Times New Roman', Times, serif;
-        font-size: 12pt;
+            color: #222222;
+        }
 
-        text-align: justify;
-        color: #EEEEEE;
+        h2 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bold;
+            font-size: 13pt;
 
-        b {
-            color: #DDDDDD;
+            color: #222222;
+        }
+
+        p {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 12pt;
+
+            text-align: justify;
+            color: #333333;
+
+            b {
+                color: #222222;
+            }
         }
     }
 }

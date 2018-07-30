@@ -13,14 +13,13 @@ const header_menu = new Map<string, {about: string, url: string}>(
     pages.map( (page: any) => [page.name, {about: page.description, url: page.link}] )
 );
 
-// <div id={styles.bodyContent}> </div>
-
-
 const App = () => (
     <BrowserRouter>
-        <div>
-            <Route exact path="/" component={() => <div style={{height: '150px' }}/>}/>
-            <PageHeader title="Hello, World!" options={header_menu} />
+        <div id={styles.appBody}>
+            <div id={styles.bodyHeader}>
+                <Route exact path="/" component={() => <div style={{height: '150px' }}/>}/>
+                <PageHeader title="Hello, World!" options={header_menu} />
+            </div>
             <div id={styles.bodyContent}>
                 <Switch>
                     <Route exact path="/"       component={() => <h1>Welcome to my incomplete site :)</h1> }/>
