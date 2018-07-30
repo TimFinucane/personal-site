@@ -2,3 +2,4 @@ Dark Pink:  #8E5B6F
 Light Pink: #B59BA3
 Teal:       #93A6B1
 YellowGrey: #A59D90
+Mustard:    #B59263
