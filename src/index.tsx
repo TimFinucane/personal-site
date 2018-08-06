@@ -19,7 +19,7 @@ const App = () => (
         <div id={styles.appBody}>
             <div id={styles.bodyHeader}>
                 <Route exact path="/" component={() => <div style={{height: '150px' }}/>}/>
-                <PageHeader title="Hello, World!" options={header_menu} />
+                <PageHeader title="Menu" options={header_menu} />
             </div>
             <div id={styles.bodyContent}>
                 <Switch>
