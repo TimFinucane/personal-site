@@ -18,6 +18,8 @@ table.table{
         vertical-align: middle;
         font-weight: bold;
 
+        cursor: pointer;
+
         border-left: 1px solid $border-color;
     }
 
@@ -58,6 +60,7 @@ table.table{
         }
         &.retracted {
             & > div {
+                padding-top: 1em; // Make section-body level with section-name
                 max-height: 2em;
 
                 overflow: hidden;
