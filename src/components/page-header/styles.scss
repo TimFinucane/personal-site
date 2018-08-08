@@ -1,4 +1,8 @@
-.page-header {    
+.page-header {
+    h1 {
+        margin-bottom: 0px;
+    }
+    
     &.centered {
         margin-left: auto;
         margin-right: auto;
