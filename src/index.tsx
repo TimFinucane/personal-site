@@ -24,10 +24,10 @@ const App = () => (
             <div id={styles.bodyContent}>
                 <Switch>
                     <Route exact path="/"       component={() =>
-                        <h1 style={{textAlign: 'center' }}>Welcome to my incomplete site :)</h1> }/>
+                        <h1 style={{textAlign: 'center' }}>Welcome to my incomplete site ☺</h1> }/>
                     <Route path="/resume"       component={Resume} />
                     <Route path="/projects"     component={Projects}/>
-                    <Route path="/referrals"    component={() => <p>referrals</p>}/>
+                    <Route path="/referrals"    component={() => <p>Sorry, this page has yet to be built</p>}/>
                     <Route><p>404 - FILE NOT FOUND</p></Route>
                 </Switch>
             </div>
