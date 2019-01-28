@@ -16,8 +16,6 @@
     "typescript": "^2.6.2"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
     "clean-webpack-plugin": "^0.1.17",
     "csp-webpack-plugin": "^1.0.2",
     "css-loader": "^0.28.7",
