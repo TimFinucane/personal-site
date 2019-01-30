@@ -18,7 +18,8 @@ const base_environment =
         rules: [
             {
                 test: /\.tsx?$/,
-                use: "ts-loader"
+                use: [{loader: "ts-loader", options: {onlyCompileBundledFiles: true}}]
+                
             },
             {
                 test: /\.scss$/,
@@ -35,7 +36,8 @@ const base_environment =
                     { loader: "sass-loader" }
                 ]
             }
-        ]
+        ],
+    noParse: /ansible/
     },
     plugins: [
         new CleanWebpackPlugin(['./dist']),
