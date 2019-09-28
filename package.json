@@ -2,8 +2,14 @@
   "name": "finucane-portfolio",
   "version": "1.0.0",
   "description": "Website for Tim Finucane",
-  "main": "dist/index.js",
+  "private": true,
   "repository": "https://github.com/TimFinucane/personal-site.git",
   "author": "Timothy Finucane <timfinucane@outlook.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "ts-loader": "^6.1.2",
+    "typescript": "^3.6.3",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9"
+  }
 }
