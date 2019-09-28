@@ -1,8 +1,6 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-const App = () => {
-  return <div>Hello World!</div>;
-};
+import Website from './views';
 
-ReactDOM.render(<App />, document.querySelector("#root"));
+ReactDOM.render(<Website />, document.querySelector('#root'));

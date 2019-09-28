@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function Header() {
+export default function Experience() {
   return (
     <div>
-      <h1>Tim Finucane</h1>
+      <p>Experience</p>
     </div>
   );
 }

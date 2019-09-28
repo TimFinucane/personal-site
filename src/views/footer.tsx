@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function Header() {
+export default function Footer() {
   return (
     <div>
-      <h1>Tim Finucane</h1>
+      <p>This is the footer</p>
     </div>
   );
 }
