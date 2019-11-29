@@ -1,4 +1,6 @@
 const path = require('path');
+const webpack = require('webpack');
+
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -10,10 +12,30 @@ module.exports = {
         use: 'ts-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.scss$/,
+        use: [
+          // Creates `style` nodes from JS strings
+          'style-loader',
+          // Translates CSS into CommonJS
+          {
+            loader: '@teamsupercell/typings-for-css-modules-loader',
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              localsConvention: 'camelCase',
+            },
+          },
+          // Compiles Sass to CSS
+          'sass-loader',
+        ],
+      },
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.ts', '.tsx', '.js', '.scss'],
   },
   output: {
     filename: 'bundle.js',
@@ -23,5 +45,6 @@ module.exports = {
     new HTMLWebpackPlugin({
       template: './src/index.html',
     }),
-  ]
+    new webpack.WatchIgnorePlugin([/css\.d\.ts$/]),
+  ],
 };
