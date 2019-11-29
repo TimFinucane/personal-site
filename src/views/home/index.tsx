@@ -1,13 +1,13 @@
 import React from 'react';
 
-import Description from './description';
-import Experience from './experience';
 
 export default function Home() {
   return (
     <div>
-      <Description />
-      <Experience />
+      <h1>I develop</h1>
+      <p>
+        Todo: Put a message here
+      </p>
     </div>
   );
 }

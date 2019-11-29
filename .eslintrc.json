@@ -34,7 +34,8 @@
           ".tsx"
         ]
       }
-    ]
+    ],
+    "react/sort-comp": "off"
   },
   "globals": {
     "document": "readonly"

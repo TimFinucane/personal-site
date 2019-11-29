@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function Experience() {
+export default function Resume() {
   return (
     <div>
-      <p>Experience</p>
+      <p>TODO</p>
     </div>
   );
 }
