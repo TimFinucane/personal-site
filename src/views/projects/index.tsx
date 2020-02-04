@@ -3,7 +3,8 @@ import React from 'react';
 export default function Projects() {
   return (
     <div>
-      <p>TODO</p>
+      <h1>Projects</h1>
+      <p>todo</p>
     </div>
   );
 }

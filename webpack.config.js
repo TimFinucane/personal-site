@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   devtool: 'inline-source-map',
@@ -31,6 +32,10 @@ module.exports = {
           // Compiles Sass to CSS
           'sass-loader',
         ],
+      },
+      {
+        test: /\/assets\/.*/,
+        loader: "file?name=[path][name].[ext]&context=./assets"
       },
     ],
   },
