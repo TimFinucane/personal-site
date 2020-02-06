@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './styles.scss';
+import styles from './menu.scss';
 
 interface Props {
   sections: string[];
@@ -9,16 +9,16 @@ interface Props {
 
 export default function Menu({ sections, onSelected }: Props) {
   return (
-    <div className={styles.menu}>
-      <h1>Tim Finucane</h1>
-      <ul className={styles.linkList}>
+    <nav className={styles.menu}>
+      <ul className={styles.navList}>
         {sections.map((section) => (
           <li key={section}>
-            <button type="button" onClick={() => onSelected(section)}>{section}</button>
+            <a href='javascript:void(0)' type="button" onClick={() => onSelected(section)}>
+              <span>{section}</span>
+            </a>
           </li>
         ))}
       </ul>
-      <div className={styles.bottomPadding} />
-    </div>
+    </nav>
   );
 }

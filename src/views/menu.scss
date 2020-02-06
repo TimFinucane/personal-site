@@ -1,0 +1,87 @@
+.menu {
+  padding: 10 0px;
+
+  text-align: right;
+  background-color: rgb(50, 80, 170); // TODO
+
+  ul.nav-list {
+    min-width: 10vw;
+    margin: calc(10vw * 0.1547) 0;
+    font-size: large;
+
+    // We rotate the element, but then have to skew and scale to refit the boundaries
+    transform: rotate(-30deg) skewX(-30deg) scale(1.15470053838, 0.86602540378);
+
+    li {
+      width: 100%;
+      margin: 0 0 -1px 0;
+      // Ensure the child's width extends to the left
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      border-width: 2px 0 0 0;
+      border-style: solid;
+      border-color: black;
+
+      &:first-child {
+        margin-left: 0px;
+        border-width: 0;
+      }
+
+      a {
+        width: 100%;
+        padding: calc(2vh + 0.155em) 1vw; // The em padding is necessary, as scaling doesn't change height.
+
+        background-color: rgb(50, 80, 170);
+        transition: width .5s;
+
+        text-align: center;
+
+        // On hover, the tag gets slightly larger (width-wise) than the list
+        &:hover {
+          background-color: rgb(30, 60, 130); // TODO
+          width: calc(100% + 25px);
+        }
+
+        span {
+          display: block;
+          // We have to un-apply the transformations (in reverse order) so that the text appears normal
+          transform: scale(0.86602540378, 1.15470053838) skewX(30deg);
+
+          font-size: xx-large;
+          font-family: sans-serif; // TODO
+
+          @media (max-width: 400px) {
+            font-size: larger;
+          }
+        }
+
+        @keyframes hover-expand {
+          from {
+            transform: scaleX(1.0);
+
+            span {
+              transform: scale(0.86602540378, 1.15470053838) skewX(30deg);
+            }
+          }
+          to {
+            transform: scaleX(1.2);
+
+            span {
+              transform: scale(0.7217, 1.15470053838) skewX(30deg);
+            }
+          }
+        }
+      }
+
+    }
+  }
+
+  .bottom-padding {
+    width: 100%;
+    height: 1.5em;
+  }
+}
+
+// TODO: Show along bottom on small screens.
