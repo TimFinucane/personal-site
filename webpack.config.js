@@ -2,7 +2,6 @@ const path = require('path');
 const webpack = require('webpack');
 
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   devtool: 'inline-source-map',
@@ -36,6 +35,12 @@ module.exports = {
       {
         test: /\/assets\/.*/,
         loader: "file?name=[path][name].[ext]&context=./assets"
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          'file-loader',
+        ],
       },
     ],
   },

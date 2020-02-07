@@ -7,7 +7,16 @@
     "strict": true,
     "esModuleInterop": true,
     "sourceMap": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "assets": [
+        "assets"
+      ],
+      "src": [
+        "src"
+      ],
+    }
   },
   "include": [
     "src/**/*"
