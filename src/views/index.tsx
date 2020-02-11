@@ -1,9 +1,8 @@
 import React from 'react';
 
 import Menu from './menu';
-import Home from './home';
-import Projects from './projects';
-import Resume from './resume';
+import HomePage from './home-page';
+import ExperiencePage from './experience-page';
 
 import styles from './styles.scss';
 import Background from './background';
@@ -21,15 +20,11 @@ export default class Website extends React.PureComponent {
   private sections = [
     {
       name: 'home',
-      component: Home,
+      component: HomePage,
     },
     {
-      name: 'projects',
-      component: Projects,
-    },
-    {
-      name: 'resume',
-      component: Resume,
+      name: 'experience',
+      component: ExperiencePage,
     },
   ];
 }

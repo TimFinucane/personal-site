@@ -11,9 +11,9 @@ export default function Menu({ sections, onSelected }: Props) {
   return (
     <nav className={styles.menu}>
       <ul className={styles.navList}>
-        {sections.map((section) => (
+        {sections.map(section => (
           <li key={section}>
-            <a href='javascript:void(0)' type='button' onClick={() => onSelected(section)}>
+            <a href={`#${section}`} onClick={() => onSelected(section)}>
               <span>{section}</span>
             </a>
           </li>

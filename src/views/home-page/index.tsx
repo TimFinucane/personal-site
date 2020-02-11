@@ -8,8 +8,12 @@ export default function Home() {
         Whether it&apos;s websites, apps, neural networks, or backend engineering, I can do it.
       </p>
       <div>
-        <a href="https://github.com/TimFinucane"><img height="32" width="32" src="https://simpleicons.org/icons/github.svg" alt="GitHub" /></a>
-        <a href="https://www.linkedin.com/in/tim-finucane/"><img height="32" width="32" src="https://simpleicons.org/icons/linkedin.svg" alt="LinkedIn" /></a>
+        <a href="https://github.com/TimFinucane">
+          <img height="32" width="32" src="https://simpleicons.org/icons/github.svg" alt="GitHub" />
+        </a>
+        <a href="https://www.linkedin.com/in/tim-finucane/">
+          <img height="32" width="32" src="https://simpleicons.org/icons/linkedin.svg" alt="LinkedIn" />
+        </a>
         <a href="/assets/Tim Finucane.pdf">CV</a>
         <a href="https://github.com/TimFinucane/personal-site">Source Code</a>
       </div>
