@@ -28,7 +28,7 @@ module.exports = {
         jest: true,
         'jest/globals': true,
       },
-    },
+    }
   ],
   rules: {
     // This project uses snake_case

@@ -1,23 +1,25 @@
 import React from 'react';
 
+import styles from './styles.scss';
+
 export default function Home() {
   return (
-    <div>
+    <div className={styles.page}>
       <nav>
         {/* Menu */}
         <ul>
           <li>
-            <h2>Experience</h2>
+            <a><h2>Experience</h2></a>
             <ul>
-              <li>Job 1</li>
-              <li>Job 2</li>
+              <li><a><h2>Job 1</h2></a></li>
+              <li><a><h2>Job 2</h2></a></li>
             </ul>
           </li>
           <li>
-            <h2>Projects</h2>
+            <a><h2>Projects</h2></a>
             <ul>
-              <li>Project 1</li>
-              <li>Project 2</li>
+              <li><a><h3>Project 1</h3></a></li>
+              <li><a><h3>Project 2</h3></a></li>
             </ul>
           </li>
         </ul>

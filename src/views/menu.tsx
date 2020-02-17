@@ -1,6 +1,7 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
-import styles from './menu.scss';
+import styles from "./menu.scss";
 
 interface Props {
   sections: string[];
@@ -13,9 +14,9 @@ export default function Menu({ sections, onSelected }: Props) {
       <ul className={styles.navList}>
         {sections.map(section => (
           <li key={section}>
-            <a href={`#${section}`} onClick={() => onSelected(section)}>
+            <Link to={section}>
               <span>{section}</span>
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

@@ -1,0 +1,65 @@
+.page {
+  margin: 0 auto;
+  width: 50%;
+
+  display: flex;
+  flex-direction: row;
+
+  padding: 15px;
+
+  background-color: #FFF;
+
+  @media screen and (max-width: 1000px) {
+    width: 70%;
+  }
+  @media screen and (max-width: 500px) {
+    width: 90%;
+  }
+}
+
+// Appears on the side of the page, transparent background.
+// Should look like tabs on a manila folder, multi-level
+.page > nav {
+
+  // A single tab
+  ul li a {
+    display: block; // Doesn't work well in safari with the writing-mode change.
+    width: 30px;
+
+    h1, h2, h3 {
+      margin: 4px 0;
+      border-left: 1px solid black;
+      border-radius: 2px;
+
+      writing-mode: sideways-lr;
+
+      @supports not (writing-mode: sideways-lr) {
+        border-left: 0;
+        border-right: 1px solid black;
+
+        writing-mode: tb;
+        transform: rotate(180deg);
+      }
+    }
+
+    // Show a slanted line above and below the tab
+    &:before {
+      display: block;
+      content: '';
+      width: 100%;
+      margin-top: 30px;
+      border-top: 1px solid black;
+      transform-origin: 50% 50%;
+      transform: rotate(-20deg);
+    }
+    &:after {
+      display: block;
+      content: '';
+      width: 100%;
+      margin-bottom: 30px;
+      border-bottom: 1px solid black;
+      transform-origin: 50% 50%;
+      transform: rotate(20deg);
+    }
+  }
+}
