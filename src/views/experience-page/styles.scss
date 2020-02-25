@@ -7,8 +7,6 @@
 
   padding: 15px;
 
-  background-color: #FFF;
-
   @media screen and (max-width: 1000px) {
     width: 70%;
   }
@@ -19,47 +17,75 @@
 
 // Appears on the side of the page, transparent background.
 // Should look like tabs on a manila folder, multi-level
+$tab-width: 20px;
 .page > nav {
 
   // A single tab
   ul li a {
     display: block; // Doesn't work well in safari with the writing-mode change.
-    width: 30px;
+    width: $tab-width;
 
     h1, h2, h3 {
-      margin: 4px 0;
-      border-left: 1px solid black;
-      border-radius: 2px;
+      width: 100%;
+      margin: 0;
+      padding: 4px 0px;
+      border-radius: 0 0 0 0;
 
       writing-mode: sideways-lr;
+      background-color: #FFF;
 
       @supports not (writing-mode: sideways-lr) {
-        border-left: 0;
-        border-right: 1px solid black;
+        border-radius: 0 1px 1px 0px;
 
         writing-mode: tb;
         transform: rotate(180deg);
+
+        line-height: 150%;
       }
+    }
+
+    h1 {
+      font-size: 100%;
+    }
+    h2 {
+      font-size: 80%;
+    }
+    h3 {
+      font-size: 70%;
     }
 
     // Show a slanted line above and below the tab
     &:before {
       display: block;
       content: '';
-      width: 100%;
-      margin-top: 30px;
-      border-top: 1px solid black;
-      transform-origin: 50% 50%;
-      transform: rotate(-20deg);
+      width: 0;
+      height: 0;
+
+      margin-top: 5px;
+      margin-left: 1px;
+
+      border-style: solid;
+      border-width: 0 0 10px $tab-width - 1px;
+      border-color: transparent transparent #FFF transparent;
     }
     &:after {
       display: block;
       content: '';
-      width: 100%;
-      margin-bottom: 30px;
-      border-bottom: 1px solid black;
-      transform-origin: 50% 50%;
-      transform: rotate(20deg);
+      width: 0;
+      height: 0;
+
+      margin-bottom: 5px;
+      margin-left: 1px;
+
+      border-style: solid;
+      border-width: 0 $tab-width - 1px 10px 0;
+      border-color: transparent #FFF transparent transparent;
     }
   }
+}
+
+.page > .content {
+  flex: 1;
+
+  background-color: #FFF;
 }

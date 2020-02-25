@@ -25,7 +25,7 @@ export default function Home() {
         </ul>
       </nav>
       {/* Actual content */}
-      <div>
+      <div className={styles.content}>
         <section>
           <h2>First heading</h2>
         </section>
